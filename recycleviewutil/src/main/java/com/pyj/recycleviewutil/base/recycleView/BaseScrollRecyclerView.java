@@ -97,6 +97,10 @@ public abstract class BaseScrollRecyclerView<T> extends RecyclerView {
 
                     isLastPage = items.size() > 0 ? false : true;
 
+                    if (items.size() == 0) {
+                        return;
+                    }
+
                     if (reset) {
                         adapter.reset(items);
                     } else {

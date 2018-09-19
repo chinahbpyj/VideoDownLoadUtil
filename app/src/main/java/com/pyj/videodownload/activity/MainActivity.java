@@ -104,7 +104,7 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
+setDefaultFrag();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

@@ -1,5 +1,7 @@
 package com.pyj.videodownload.adapter;
 
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -42,7 +44,6 @@ public class VideoDownLoadListAdapter extends RecycleViewAdapter<VideoDownloadBe
                     int position = (int) tag;
                     VideoDownloadBean.Result result = dataSource.get(position);
 
-
                     mListener.OnViewClick(result.magnet);
                 }
             }
@@ -66,9 +67,23 @@ public class VideoDownLoadListAdapter extends RecycleViewAdapter<VideoDownloadBe
         holder.videoDate.setText(item.count);
 
         holder.magnet.setTag(position);
+
+        holder.cardView.setCardBackgroundColor(Color.parseColor(getRandomBackGroundColor()));
+    }
+
+    private String getRandomBackGroundColor(){
+        StringBuilder stringBuilder=new StringBuilder("#");
+
+        for(int i=0;i<6;i++){
+            int random=(int)(Math.random()*9+1);
+            stringBuilder.append(random);
+        }
+
+        return stringBuilder.toString();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public CardView cardView;
         public TextView videoName;
         public TextView videoClarity;
         public TextView videoSize;
@@ -77,7 +92,7 @@ public class VideoDownLoadListAdapter extends RecycleViewAdapter<VideoDownloadBe
 
         public ViewHolder(View itemView) {
             super(itemView);
-
+            cardView= itemView.findViewById(R.id.cardView);
             videoName = itemView.findViewById(R.id.videoName);
             videoClarity = itemView.findViewById(R.id.videoClarity);
             videoSize = itemView.findViewById(R.id.videoSize);
