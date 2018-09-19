@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="15dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="6dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/videoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/colorGrayDarker"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/videoDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/date_shape"
+            android:padding="10dp"
+            android:textColor="@color/colorGrayDarker"
+            android:textSize="13sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoName" />
+
+        <TextView
+            android:id="@+id/videoSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/size_shape"
+            android:padding="10dp"
+            android:textColor="@color/colorGrayDarker"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/videoDate"
+            app:layout_constraintRight_toLeftOf="@id/videoDate" />
+
+        <TextView
+            android:id="@+id/videoClarity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/clarity_shape"
+            android:padding="10dp"
+            android:textColor="@color/colorGrayDarker"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/videoSize"
+            app:layout_constraintRight_toLeftOf="@id/videoSize" />
+
+        <TextView
+            android:id="@+id/magnet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/magnet_shape"
+            android:padding="15dp"
+            android:text="复制（迅雷下载）"
+            android:textColor="@color/colorGrayDarker"
+            android:textSize="15sp"
+            android:clickable="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoDate" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

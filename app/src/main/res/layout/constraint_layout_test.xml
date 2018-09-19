@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+tools:context=".activity.MainActivity">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#dd1"
+        android:gravity="center"
+        android:text="banner"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/image"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#a21"
+        android:gravity="center"
+        android:text="image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="首都航空社保卡范德萨第三方的还是飞机的话不多说是的北师大的时刻保持快速代表啥都看不见十点半都比较焚枯食淡的加快步伐"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/image"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="8小时前"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintLeft_toRightOf="@id/image" />
+
+    <TextView
+        android:id="@+id/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        android:textColor="#a59"
+        android:textSize="15sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/b"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+    <!--app:layout_constraintHorizontal_chainStyle="packed" //设置链样式
+        app:layout_constraintHorizontal_bias="0" // 设置水平偏好为0-->
+
+    <TextView
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="BBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        android:textColor="#5A1"
+        android:textSize="15sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/a"
+        app:layout_constraintLeft_toRightOf="@id/a"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/a" />
+
+    <TextView
+        android:id="@+id/aaa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#11a"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="aaa"
+        android:textColor="#000"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bbb"
+        app:layout_constraintTop_toBottomOf="@id/a" />
+
+    <TextView
+        android:id="@+id/bbb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#91a"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="bbb"
+        android:textColor="#000"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/aaa"
+        app:layout_constraintLeft_toRightOf="@id/aaa"
+        app:layout_constraintRight_toLeftOf="@id/ccc"
+        app:layout_constraintTop_toTopOf="@id/aaa" />
+
+    <TextView
+        android:id="@+id/ccc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#7aa"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="ccc"
+        android:textColor="#000"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/aaa"
+        app:layout_constraintLeft_toRightOf="@id/bbb"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/aaa" />
+
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#41a"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aaa"
+        app:layout_constraintWidth_percent="0.5" />
+
+</android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
+

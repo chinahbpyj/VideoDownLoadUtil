@@ -1,0 +1,48 @@
+apply plugin: rootProject.ext.plugins.application
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation rootProject.ext.dependencies.v4
+    implementation rootProject.ext.dependencies.appCompat
+    implementation rootProject.ext.dependencies.cardview
+    implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.okhttp3
+    testImplementation rootProject.ext.dependencies.mockwebserver
+    implementation rootProject.ext.dependencies.stetho
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.constraint
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.statusbarutil
+    implementation project(':recycleviewutil')
+}
