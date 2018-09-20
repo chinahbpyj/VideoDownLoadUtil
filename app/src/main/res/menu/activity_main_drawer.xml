@@ -5,21 +5,23 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_zzs"
+            android:title="种子搜" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_clb"
+            android:title="磁力吧" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_bttz"
+            android:title="BT兔子" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_btdb"
+            android:title="BTDB" />
+        <item
+            android:id="@+id/nav_bt4g"
+            android:title="BT4G" />
+        <item
+            android:id="@+id/nav_dss"
+            android:title="屌丝搜" />
     </group>
 
     <item android:title="Communicate">

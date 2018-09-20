@@ -45,4 +45,5 @@ dependencies {
     implementation rootProject.ext.dependencies.rxjava
     implementation rootProject.ext.dependencies.statusbarutil
     implementation project(':recycleviewutil')
+    implementation rootProject.ext.dependencies.searchview
 }

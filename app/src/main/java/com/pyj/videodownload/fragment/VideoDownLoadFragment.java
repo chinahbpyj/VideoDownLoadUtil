@@ -16,6 +16,8 @@ import com.pyj.videodownload.R;
 import com.pyj.videodownload.adapter.VideoDownLoadListAdapter;
 import com.pyj.videodownload.bean.VideoDownloadBean;
 import com.pyj.videodownload.util.AppUtils;
+import com.pyj.videodownload.util.Constans;
+import com.pyj.videodownload.util.StringUtil;
 import com.pyj.videodownload.view.VideoDownLoadRecyclerView;
 
 import java.util.ArrayList;
@@ -29,6 +31,9 @@ public class VideoDownLoadFragment extends BaseFragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private VideoDownLoadRecyclerView videoDownLoadRecyclerView;
     private VideoDownLoadListAdapter adapter;
+
+    private String source = Constans.source_zzs;
+    private String keyword = Constans.keyword;
 
     public VideoDownLoadFragment() {
 
@@ -129,8 +134,37 @@ public class VideoDownLoadFragment extends BaseFragment {
     @Override
     public void initData() {
         videoDownLoadRecyclerView.query(new HashMap<String, String>() {{
-            put("source", "种子搜");
-            put("keyword", "军旅");
+            put("source", source);
+            put("keyword", keyword);
         }});
+    }
+
+    private void setSource(String source) {
+        this.source = source;
+    }
+
+    private void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public void setSourceAndKeyword(String source,
+                                    String keyword,
+                                    boolean isSearch) {
+        if (!StringUtil.isEmpty(source)) {
+            setSource(source);
+        }
+
+        if (!StringUtil.isEmpty(keyword)) {
+            setKeyword(keyword);
+        }
+
+        if (isSearch) {
+            initData();
+        } else {
+            if (videoDownLoadRecyclerView.getServiceBean() == null) {
+                initData();
+            }
+        }
+
     }
 }
