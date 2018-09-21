@@ -1,0 +1,29 @@
+<resources>
+    <declare-styleable name="LoadingSuccessView">
+        <attr name="loadingLayout" format="reference" />
+        <attr name="noDataLayout" format="reference" />
+        <attr name="networkErrorLayout" format="reference" />
+        <!--<attr name="title" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleType">
+            <enum name="text" value="0" />
+            <enum name="image" value="1" />
+        </attr>
+        <attr name="titleImage" format="reference|color" />
+        <attr name="titleImageWidth" format="dimension" />
+        <attr name="titleImageHeight" format="dimension" />
+
+        <attr name="leftType">
+            <enum name="image" value="1" />
+            <enum name="text" value="0" />
+        </attr>
+        <attr name="leftVisible" format="boolean" />
+        <attr name="leftImage" format="reference|color" />
+        <attr name="leftText" format="string" />
+        <attr name="leftTextSize" format="dimension" />
+        <attr name="leftTextColor" format="color" />-->
+    </declare-styleable>
+
+
+</resources>

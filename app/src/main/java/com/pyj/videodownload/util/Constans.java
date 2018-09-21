@@ -8,5 +8,5 @@ public class Constans {
     public static final String source_bt4g="BT4G";
     public static final String source_dss="屌丝搜";
 
-    public static final String keyword="胡歌";
+    public static final String keyword="";
 }

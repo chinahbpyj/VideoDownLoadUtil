@@ -17,4 +17,13 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <com.pyj.videodownload.view.LoadingSuccessView
+        android:id="@+id/loadingSuccessView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:loadingLayout="@layout/custom_loading"
+        app:networkErrorLayout="@layout/layout_network_error"
+        android:layout_centerInParent="true"
+        app:noDataLayout="@layout/layout_nodata"/>
+
 </RelativeLayout>

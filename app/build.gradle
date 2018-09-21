@@ -46,4 +46,5 @@ dependencies {
     implementation rootProject.ext.dependencies.statusbarutil
     implementation project(':recycleviewutil')
     implementation rootProject.ext.dependencies.searchview
+    implementation rootProject.ext.dependencies.lottie
 }

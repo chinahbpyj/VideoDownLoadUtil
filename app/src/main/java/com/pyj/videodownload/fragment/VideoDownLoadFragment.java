@@ -18,6 +18,7 @@ import com.pyj.videodownload.bean.VideoDownloadBean;
 import com.pyj.videodownload.util.AppUtils;
 import com.pyj.videodownload.util.Constans;
 import com.pyj.videodownload.util.StringUtil;
+import com.pyj.videodownload.view.LoadingSuccessView;
 import com.pyj.videodownload.view.VideoDownLoadRecyclerView;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 public class VideoDownLoadFragment extends BaseFragment {
+    private LoadingSuccessView loadingSuccessView;
     private View view;
     private SwipeRefreshLayout swipeRefreshLayout;
     private VideoDownLoadRecyclerView videoDownLoadRecyclerView;
@@ -58,10 +60,14 @@ public class VideoDownLoadFragment extends BaseFragment {
             initView();
         }
 
+      /*  loadingSuccessView = new LoadingSuccessView(getActivity());
+        return loadingSuccessView;*/
+
         return view;
     }
 
     public void initView() {
+        loadingSuccessView = view.findViewById(R.id.loadingSuccessView);
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
         videoDownLoadRecyclerView = view.findViewById(R.id.videoDownLoadRecyclerView);
 
@@ -91,12 +97,20 @@ public class VideoDownLoadFragment extends BaseFragment {
             public void onQueryNoResult() {
                 videoDownLoadRecyclerView.setVisibility(View.INVISIBLE);
                 swipeRefreshLayout.setRefreshing(false);
+
+                swipeRefreshLayout.setVisibility(View.GONE);
+                loadingSuccessView.setVisibility(View.VISIBLE);
+                loadingSuccessView.loadNoData();
             }
 
             @Override
             public void onQuerySuccess() {
                 videoDownLoadRecyclerView.setVisibility(View.VISIBLE);
                 swipeRefreshLayout.setRefreshing(false);
+
+                swipeRefreshLayout.setVisibility(View.VISIBLE);
+                loadingSuccessView.setVisibility(View.GONE);
+                loadingSuccessView.loadSuccess();
             }
 
             @Override
@@ -107,6 +121,10 @@ public class VideoDownLoadFragment extends BaseFragment {
             @Override
             public void onQueryFail() {
                 swipeRefreshLayout.setRefreshing(false);
+
+                swipeRefreshLayout.setVisibility(View.GONE);
+                loadingSuccessView.setVisibility(View.VISIBLE);
+                loadingSuccessView.loadNetworkError();
             }
         });
 
@@ -127,12 +145,20 @@ public class VideoDownLoadFragment extends BaseFragment {
     SwipeRefreshLayout.OnRefreshListener onRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            initData();
+            queryData(true);
         }
     };
 
     @Override
     public void initData() {
+        queryData(true);
+    }
+
+    private void queryData(boolean isFirst) {
+        swipeRefreshLayout.setVisibility(View.GONE);
+        loadingSuccessView.setVisibility(View.VISIBLE);
+        loadingSuccessView.loadingStrat();
+
         videoDownLoadRecyclerView.query(new HashMap<String, String>() {{
             put("source", source);
             put("keyword", keyword);
@@ -159,10 +185,10 @@ public class VideoDownLoadFragment extends BaseFragment {
         }
 
         if (isSearch) {
-            initData();
+            queryData(false);
         } else {
             if (videoDownLoadRecyclerView.getServiceBean() == null) {
-                initData();
+                queryData(false);
             }
         }
 
